@@ -6,8 +6,10 @@ if(process.env.NODE_ENV === 'production') {
             pageAccessToken: process.env.pageAccessToken ,
             VerifyToken: process.env.VerifyToken,
             appSecret: process.env.appSecret 
-            }
-        }
+        },
+        TMDB: process.env.TMDB
+    }
+        
 } else {
     module.exports = require('./development.json');
 }
