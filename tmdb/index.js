@@ -24,7 +24,6 @@ module.exports = nlpData => {
             cuisineType:null,
             dishType:null,
             mealType:null
-
         }
         const entity = ['health','food','diet','cuisineType','dishType','mealType'] 
         entity.forEach( param =>{

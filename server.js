@@ -42,12 +42,11 @@ server.post('/', (req, res, data) => {
 		//console.log(data)
 		try {
 			if (datas.content === 'Hello') {
-        await FB.txt(datas.sender, `Hey, it's ${time}, would you like to eat some ${meal} ? `);
-        next('route');
+        await FB.txt(datas.sender, `Hey, it's ${time}, may I suggest you like some ${meal} recipes ? `);
       }
-      else if (datas.content === 'Yes I would') {
+      else if (datas.content === 'Yes please') {
         await FB.txt(datas.sender, `Alright ! Let me suggest you 3 ${meal} you'd love !!`);
-        let  intent = meal
+        let  intent = {food:meal}
         console.log(intent)
         const recipe = await getRecipe(intent)
         const r = []
@@ -58,7 +57,8 @@ server.post('/', (req, res, data) => {
               "HealthLabel":element.recipe.healthLabels,
               "Cautions":element.recipe.cautions,
               "Recipe":element.recipe.ingredientLines,
-              "Calories":element.recipe.calories
+              "Calories":element.recipe.calories,
+              "Image":element.recipe.image
             }
           r.push(result)
           console.log(result) 

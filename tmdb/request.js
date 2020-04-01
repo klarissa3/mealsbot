@@ -1,8 +1,8 @@
 "use strict";
 
 const axios = require("axios");
-const appid = "e4e676ed"
-const apikey = "d36fc94a5b2406cc1eae99aea9a5da15";
+const appid = ""
+const apikey = "";
 const tmdb = require('./index.js');
 
 const getRecipe = (intent) => {
